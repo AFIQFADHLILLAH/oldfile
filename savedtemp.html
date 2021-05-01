@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style type="text/css">
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		font-weight: bold;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.navbar, .footer{
+		width: 100%;
+		background-color: silver;
+	}
+
+	.sidebar{
+		flex: 30%; height: 100vh;
+		background-color: darkgreen;
+	}
+
+	.sidebar div {
+		margin-top: 20px;
+	}
+
+
+	.main{
+		flex: 70%;
+		flex-grow: 1;
+		background: linear-gradient(to right, #ADFF2F, #008000);
+		display: inline-block;
+		text-align: center;
+	}
+
+	.main #canvas{
+		background-size: 100% 100%;
+		width: 400px;
+		height: 550px;
+		border: 2px dotted black;
+		position: relative;
+		left: 330px;top: 50px;
+		
+	}
+
+	@media  screen and (max-width: 600px){
+		body{
+			flex-direction: column;
+		}
+		.main{
+			order:2;
+			flex-basis: 80vh;
+		}
+		.sidebar{
+			order:3;
+		}
+		#footer{
+			order:4;
+		}
+
+	}
+
+</style>
+<script type="text/javascript">
+		function reveal(){
+			var name = document.getElementById("name");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var venue = document.getElementById("venue");
+			var content = document.getElementById("content");
+			var reply = document.getElementById("reply");
+			
+
+			name.value = localStorage.getItem("name");
+			date.value = localStorage.getItem("date");
+			time.value = localStorage.getItem("time");
+			venue.value = localStorage.getItem("venue");
+			content.value = localStorage.getItem("content");
+			reply.value = localStorage.getItem("reply");
+			
+		}
+
+			function fillin(){
+			var name = document.getElementById("name");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var venue = document.getElementById("venue");
+			var content = document.getElementById("content");
+			var reply = document.getElementById("reply");
+
+			name1.innerHTML = localStorage.getItem("name");
+			date1.innerHTML = localStorage.getItem("date");
+			time1.innerHTML = localStorage.getItem("time");
+			venue1.innerHTML = localStorage.getItem("venue");
+			content1.innerHTML = localStorage.getItem("content");
+			reply1.innerHTML = localStorage.getItem("reply");
+			
+		}
+
+		function changer(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				canvas.style.backgroundImage="url(1.jpg)";
+			}
+			else if (value==2) {
+				canvas.style.backgroundImage="url(2.jpg)";
+			}
+			else if (value==3) {
+				canvas.style.backgroundImage="url(3.jpg)";
+			}
+
+		}
+
+		function fontfamily(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				canvas.style.fontFamily="Impact";
+			}
+			else if (value==2) {
+				canvas.style.fontFamily="Times New Roman";
+			}
+			else if (value==3) {
+				canvas.style.fontFamily="Arial";
+			}
+
+		}
+		function fontsize(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				canvas.style.fontSize="10";
+			}
+			else if (value==2) {
+				canvas.style.fontSize="12";
+			}
+			else if (value==3) {
+				canvas.style.fontSize="14";
+			}
+
+		}
+		var menuList = document.getElementById("menuList");
+
+		menuList.style.maxHeight = "0px";
+
+		function togglemenu(){
+			if(menuList.style.maxHeight == "0px")
+			{
+				menuList.style.maxHeight = "130px";
+			}
+			else 
+			{
+				menuList.style.maxHeight = "0px";
+			}
+		}
+	</script>
+<body>
+<div class="container">
+<div class="navbar">
+	<img src="cardforyou.png" class="logo">
+			<nav>
+				<ul id="menuList">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="customcard.html">Custom card</a></li>
+					<li><a href="savedtemp.html">History</a></li>
+				</ul>
+			</nav>
+			<img src="down.png" class="menu-icon" onclick="togglemenu()">
+</div>
+<div class="sidebar">
+	<div>	
+	<u><h2>Template</h2></u><br>	
+	<select onchange="changer(this.value)">
+		<option value="0">Please Select</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+	</div>
+	<div>
+		<u><h2>Font</h2></u><br>	
+	<select onchange="fontfamily(this.value)">
+		<option value="0"">Please Select</option>
+		<option value="1" style="font-family: impact;">Impact</option>
+		<option value="2" style="font-family: Times new roman";>Times New Roman</option>
+		<option value="3" style="font-family: Arial;">Arial</option>
+	</select>
+	</div>
+		<div>
+		<u><h2>Font size</h2></u><br>	
+	<select onchange="fontsize(this.value)">
+		<option value="0">Please Select</option>
+		<option value="1" style="font-size: 10;">10</option>
+		<option value="2" style="font-size: 12;">12</option>
+		<option value="3" style="font-size: 14;">14</option>
+	</select>
+	</div>
+</div>
+<div class="main">
+	<div id="canvas">
+		<input type="text" id="name" placeholder="Enter recepient name" style="text-align: center; margin-top: 80px;"><br>
+		<input type="date" id="date" placeholder="Enter date of event"  style="text-align: center; margin-top: 100px;"><br>
+		<input type="time" id="time" placeholder="Enter time of event"  style="text-align: center; margin-top: 100px;"><br>
+		<input type="text" id="venue" placeholder="Enter venue of event"  style="text-align: center; margin-top: 10px;"><br>
+		<input type="text" id="content" placeholder="Enter content of card" size="40" style="text-align: center; margin-top: 30px;"><br>
+		<input type="num" id="reply" placeholder="Enter contact number" maxlength="7"  style="text-align: center; margin-top: 40px;"><br>
+	</div>
+	<button onclick="reveal()"  style="text-align: center; margin-top: 60px;">Load</button>
+</div>
+<div class="footer">
+	
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		
+		.row {
+			display: grid;
+			grid-gap: 10px;
+			grid-template-areas: 
+			"one  two"
+			"three four"
+			"five  six";
+		}
+
+		.col-2 {
+			margin-top: 10px;
+		}
+
+		.col-2 img:hover {
+			transform:rotate(10deg); 
+			transition: 1s ease-in-out;
+		}
+		
+		@media only screen and (max-width: 600px){
+				.row {
+					display: grid;
+					grid-gap: 10px;
+					grid-template-areas: 
+				"two"
+				"one"
+				"four"
+				"three"
+				"six"
+				"five";
+			}
+		#menuList {
+		margin-top: 30px;
+		width: 100%;
+		height: 150px;
+		background: linear-gradient(to right, #ADFF2F, #008000);
+	}
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<img src="cardforyou.png" class="logo">
+			<nav>
+				<ul id="menuList">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="customcard.html">Custom card</a></li>
+					<li><a href="savedtemp.html">History</a></li>
+				</ul>
+			</nav>
+			<img src="down.png" class="menu-icon" onclick="togglemenu()">
+		</div>
+		<div class="row">
+			<div class="col-1" style="grid-area:one">
+				<h2>Corporate Card</h2><br>
+				<h3>Business Card,Event Card,Opening launch Card</h3>
+				<a href="corporatecard.html"><button type="button">Create Now</button></a>
+			</div>
+			<div class="col-2" style="grid-area:two">
+				<img src="corporatecard.jpg" class="card">
+				<div class="color-box"></div>
+			</div>
+		<div class="col-1" style="grid-area:three">
+				<h2>Formal Card</h2><br>
+				<h3>Wedding Card,Formal Dinner Card,Graduation Card</h3>
+				<a href="formalcard.html"><button type="button">Create Now</button></a>
+			</div>
+			<div class="col-2" style="grid-area:four">
+				<img src="formalcard.jpg" class="card">
+				<div class="color-box"></div>
+			</div>
+			<div class="col-1" style="grid-area:five">
+				<h2>Informal Card</h2><br>
+				<h3>Birthday Card,Party Card,Celebration Card</h3>
+				<a href="informalcard.html"><button type="button">Create Now</button></a>
+			</div>
+			<div class="col-2" style="grid-area:six">
+				<img src="informalcard.jpg" class="card">
+				<div class="color-box"></div>
+			</div>
+			<div class="footer">
+					<!-- <p style="text-align: center;">@CardForYou</p> -->
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var menuList = document.getElementById("menuList");
+
+		menuList.style.maxHeight = "0px";
+
+		function togglemenu(){
+			if(menuList.style.maxHeight == "0px")
+			{
+				menuList.style.maxHeight = "130px";
+			}
+			else 
+			{
+				menuList.style.maxHeight = "0px";
+			}
+		}
+	</script>
+</body>
+</html>

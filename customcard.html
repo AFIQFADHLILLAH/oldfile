@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style type="text/css">
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		font-weight: bold;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.navbar, .footer{
+		width: 100%;
+		background-color: silver;
+	}
+
+	.sidebar{
+		flex:30%; height: 100vh;
+		background-color: darkgreen;
+	}
+
+	.sidebar div {
+		margin-top: 20px;
+	}
+
+
+	.main{
+		flex-basis:70%;
+		flex-grow: 1;
+		background: linear-gradient(to right, #ADFF2F, #008000);
+		display: inline-block;
+		text-align: center;
+	}
+
+	.main #canvas{
+		background-size: 100% 100%;
+		width: 400px;
+		height: 550px;
+		border: 2px dotted black;
+		position: relative;
+		left: 330px;top: 50px;
+	}
+
+	#div1{
+
+  width: 350px;
+  height: 100px;
+  margin-top: -5px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  border: 4px solid black;
+  border-radius: 20px 20px 20px 20px;
+}
+
+	#div2 {
+		width: 350px;
+ 		height: 100px;
+  		margin-left: 23px;
+ 		border: 2px dotted black;
+ 		border-radius: 20px 20px 20px 20px;
+	}
+
+	@media  screen and (max-width: 600px){
+	
+	body {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-areas: 
+		"nav"
+		"sidebar"
+		"main";
+	}
+
+	.sidebar {
+		margin-top: 100px;
+		height: 600px;
+		border-radius: 10px 10px 10px 10px;
+	}
+
+	.main {
+		width: 100%;
+		height: 800px;
+		border-radius: 10px 10px 10px 10px;
+	}
+
+
+	.main #canvas{
+		background-size: 100% 100%;
+		width: 400px;
+		height: 550px;
+		margin-top: 20px;
+		border: 2px dotted black;
+		position: relative;
+		left: 40px;top: 50px;
+	}
+
+	#menuList {
+		margin-top: 30px;
+		width: 100%;
+		height: 120px;
+		background: linear-gradient(to right, #ADFF2F, #008000);
+	}
+}
+
+</style>
+
+<body>
+<div class="container">
+<div class="navbar" style="grid-area: nav">
+	<img src="cardforyou.png" class="logo">
+			<nav>
+				<ul id="menuList">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="customcard.html">Custom card</a></li>
+					<li><a href="savedtemp.html">History</a></li>
+				</ul>
+			</nav>
+			<img src="down.png" class="menu-icon" onclick="togglemenu()">
+		</div>
+<div class="sidebar" style="grid-area:sidebar">
+	<div>	
+	<u><h2>Template</h2></u><br>	
+	<select onchange="changer(this.value)">
+		<option value="0">Please Select</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+	</select>
+	</div>
+	<div>
+		<u><h2>Font</h2></u><br>	
+	<select onchange="font(this.value)">
+		<option value="0">Please Select</option>
+		<option value="1" style="font-family: Arial;">Arial</option>
+		<option value="2" style="font-family: Rockwell;">Rockwell</option>
+		<option value="3" style="font-family: impact;">Impact</option>
+	</select>
+	</div>
+	<div>
+		<u><h2>Font size</h2></u><br>	
+	<select onchange="fontsize(this.value)">
+		<option value="0">Please Select</option>
+		<option value="1" style="font-size: 10;">12</option>
+		<option value="2" style="font-size: 12;">14</option>
+		<option value="3" style="font-size: 14;">16</option>
+	</select>
+	</div>
+	<div>
+		<u><h2>Stickers</h2></u><br>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">	
+  <img src="Invited.png" draggable="true" ondragstart="drag(event)" id="drag1" style="border-radius: 20px 20px 20px 20px;">
+</div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="congratulations.png" draggable="true" ondragstart="drag(event)" id="drag2" style="border-radius: 20px 20px 20px 20px;">
+</div>
+</div>
+</div>
+<div class="main" style="grid-area:main">
+	<div id="canvas">
+		<input type="text" id="name" placeholder="Enter recepient name" style="text-align: center; margin-top: 80px;"><br>
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="text-align: center; margin-top: 10px;" ></div><br>
+		<input type="text" id="content" placeholder="Enter content of card" size="35" style="text-align: center; margin-top: 0px;"><br>
+		<input type="date" id="date" placeholder="Enter date of event"  style="text-align: center; margin-top: 100px;"><br>
+		<input type="time" id="time" placeholder="Enter time of event"  style="text-align: center; margin-top: 10px;"><br>
+		<input type="text" id="venue" placeholder="Enter venue of event"  style="text-align: center; margin-top: 20px;"><br>
+		<input type="num" id="reply" placeholder="Enter contact number" maxlength="7"  style="text-align: center; margin-top: 20px;"><br>
+	</div>
+	<button id="button1" onclick="submit()"  style="text-align: center; margin-top: 100px;">Submit</button>
+</div>
+<div class="footer">
+	
+</div>
+</div>
+<script type="text/javascript">
+		function submit(){
+			var name = document.getElementById("name");
+			var content = document.getElementById("content");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var venue = document.getElementById("venue");
+			var reply = document.getElementById("reply");
+			var canvas = document.getElementById("canvas");
+
+			localStorage.setItem("name", name.value);
+			localStorage.setItem("content", content.value);
+			localStorage.setItem("date", date.value);
+			localStorage.setItem("time", time.value);
+			localStorage.setItem("venue", venue.value);
+			localStorage.setItem("reply", reply.value);
+			localStorage.setItem("canvas", canvas.value);
+			alert("Saved!");
+		}
+
+		function changer(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				canvas.style.backgroundImage="url(1.jpg)";
+			}
+			else if (value==2) {
+				canvas.style.backgroundImage="url(2.jpg)";
+			}
+			else if (value==3) {
+				canvas.style.backgroundImage="url(3.jpg)";
+			}
+			else if (value==4) {
+				canvas.style.backgroundImage="url(4.jpg)";
+			}
+			else if (value==5) {
+				canvas.style.backgroundImage="url(5.jpg)";
+			}
+			else if (value==6) {
+				canvas.style.backgroundImage="url(6.jpg)";
+			}
+		}
+
+		function font(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				document.getElementById("name").style.fontFamily="Arial";
+				document.getElementById("content").style.fontFamily="Arial";
+				document.getElementById("date").style.fontFamily="Arial";
+				document.getElementById("time").style.fontFamily="Arial";
+				document.getElementById("venue").style.fontFamily="Arial";
+				document.getElementById("reply").style.fontFamily="Arial";
+			}
+			else if (value==2) {
+				document.getElementById("name").style.fontFamily="Rockwell";
+				document.getElementById("content").style.fontFamily="Rockwell";
+				document.getElementById("date").style.fontFamily="Rockwell";
+				document.getElementById("time").style.fontFamily="Rockwell";
+				document.getElementById("venue").style.fontFamily="Rockwell";
+				document.getElementById("reply").style.fontFamily="Rockwell";
+			}
+			else if (value==3) {
+				document.getElementById("name").style.fontFamily="Impact";
+				document.getElementById("content").style.fontFamily="Impact";
+				document.getElementById("date").style.fontFamily="Impact";
+				document.getElementById("time").style.fontFamily="Impact";
+				document.getElementById("venue").style.fontFamily="Impact";
+				document.getElementById("reply").style.fontFamily="Impact";
+			}
+
+		}
+		function fontsize(value){
+			var canvas = document.getElementById("canvas");	
+	if (value==1) {
+				document.getElementById("name").style.fontSize="12px";
+				document.getElementById("content").style.fontSize="12px"; 
+				document.getElementById("date").style.fontSize="12px";
+				document.getElementById("time").style.fontSize="12px";
+				document.getElementById("venue").style.fontSize="12px";
+				document.getElementById("reply").style.fontSize="12px";
+			}
+			else if (value==2) {
+				document.getElementById("name").style.fontSize="14px";
+				document.getElementById("content").style.fontSize="14px";
+				document.getElementById("date").style.fontSize="14px";
+				document.getElementById("time").style.fontSize="14px";
+				document.getElementById("venue").style.fontSize="14px";
+				document.getElementById("reply").style.fontSize="14px";
+			}
+			else if (value==3) {
+				document.getElementById("name").style.fontSize="16px";
+				document.getElementById("content").style.fontSize="16px";
+				document.getElementById("date").style.fontSize="16px";
+				document.getElementById("time").style.fontSize="16px";
+				document.getElementById("venue").style.fontSize="16px";
+				document.getElementById("reply").style.fontSize="16px";
+			}
+		}
+
+			
+		var menuList = document.getElementById("menuList");
+
+		menuList.style.maxHeight = "0px";
+
+		function togglemenu(){
+			if(menuList.style.maxHeight == "0px")
+			{
+				menuList.style.maxHeight = "130px";
+			}
+			else 
+			{
+				menuList.style.maxHeight = "0px";
+			}
+		}
+		
+		function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+	</script>
+</body>
+</html>
