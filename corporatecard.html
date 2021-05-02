@@ -329,7 +329,13 @@
 				document.getElementById("reply1").style.fontSize="18px";
 			}
 		}
-
+	
+// -----------------greeting-----------------------	
+		function greetingbox() {
+  var greet1 = document.getElementById("greeting");
+  var greet2 = greet1.selectedIndex;
+  document.getElementById("greeting1").innerHTML = greet1.options[greet2].text;
+}
 // -----------------Drop down for Nav @media-----------------------		
 		var menuList = document.getElementById("menuList");
 
@@ -390,6 +396,17 @@ function drop(ev) {
 	</div>
 	</div>
 	<div>
+		<h3>Greeting</h3><br>	
+	<select id="greeting" onchange="greetingbox()" >
+		<option >---select---</option>
+		<option >Assalamualaikum</option>
+		<option >Salam sejahtera</option>
+		<option >Good day</option>
+		<option >Good morning</option>
+	</select>
+	
+	</div>
+	<div>
 		<h3>Stickers</h3><br>
 	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">	
   <img src="logoblack.png" draggable="true" ondragstart="drag(event)" id="drag1" style="border-radius: 20px 20px 20px 20px;">
@@ -436,6 +453,7 @@ function drop(ev) {
 <div class="main" style="grid-area:main" >
 	<h1 style="margin-top: 50px">Corporate Card</h1><br>
 	<div id="canvas">
+		<div id="greeting1" contenteditable="false" style="text-align: center;margin-top: 20px;">Please Select Greeting In Drop Box</div>	
 		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="text-align: center; margin-top: 10px;" ></div><br>
 		<div id="name1" contenteditable="false" style="text-align: center; margin-top: 10px;">Name</div><br>
 		<div id="content1" contenteditable="false" size="35" style="text-align: center; margin-top: 20px;">Content</div><br>
