@@ -1,10 +1,16 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <style type="text/css">
+
+	@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
 
 	.container {
 		display: flex;
@@ -20,7 +26,7 @@ x<!DOCTYPE html>
 	}
 
 	.sidebar{
-		flex:30%; height: 105vh;
+		flex:30%; height:1100px;
 		background-color: darkgreen;
 	}
 
@@ -45,24 +51,27 @@ x<!DOCTYPE html>
 		height: 550px;
 		border: 2px dotted black;
 		position: relative;
-		left: 460px;top: 50px;
+		left: 330px;
 	}
 
 	#div1{
 
-  width: 350px;
+  width: 100px;
   height: 100px;
   margin-top: -5px;
-  margin-left: 50px;
+  margin-left: 0px;
   margin-bottom: 10px;
   border: 4px solid black;
   border-radius: 20px 20px 20px 20px;
+  display: inline-block;
+
 }
 
 	#div2 {
-		width: 350px;
+		width: 100px;
  		height: 100px;
-  		margin-left: 23px;
+ 		margin-top: 10px;
+  		margin-left: 10px;
  		border: 2px dotted black;
  		border-radius: 20px 20px 20px 20px;
 	}
@@ -90,13 +99,31 @@ x<!DOCTYPE html>
 		border-radius: 10px 10px 10px 10px;
 	}
 
+    #Templateimg {
+    	display: flex;
+    	margin-top: -10px;
+    	margin-left: 0px;
+    }
 
+    #one , #two {
+    	display: none;
+    }
 
 	button {
-		margin-top: 20px;
+		margin-top: -200px;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
+
+	}
+
+	#sendrecip{
+		border:1px solid black;
+		width: 300px;
+		height: 100px;
+		margin-top: 30px;
+		margin-left: 380px;
+		border-radius: 10px 10px 10px 10px;
 
 	}
 
@@ -111,12 +138,6 @@ x<!DOCTYPE html>
 		"main";
 	}
 
-/*	#menuList {
-		width: 100%;
-		height: 100px;
-		background: linear-gradient(to right, #ADFF2F, #008000);
-	}
-*/
 	.row{
 		flex-direction: column;
 	}
@@ -209,28 +230,28 @@ x<!DOCTYPE html>
 		function font(value){
 			var canvas = document.getElementById("canvas");
 			if (value==1) {
-				document.getElementById("name1").style.fontFamily="Arial";
-				document.getElementById("content1").style.fontFamily="Arial";
-				document.getElementById("date1").style.fontFamily="Arial";
-				document.getElementById("time1").style.fontFamily="Arial";
-				document.getElementById("venue1").style.fontFamily="Arial";
-				document.getElementById("reply1").style.fontFamily="Arial";
+				document.getElementById("name1").style.fontFamily="Dancing Script";
+				document.getElementById("content1").style.fontFamily="Dancing Script";
+				document.getElementById("date1").style.fontFamily="Dancing Script";
+				document.getElementById("time1").style.fontFamily="Dancing Script";
+				document.getElementById("venue1").style.fontFamily="Dancing Script";
+				document.getElementById("reply1").style.fontFamily="Dancing Script";
 			}
 			else if (value==2) {
-				document.getElementById("name1").style.fontFamily="Rockwell";
-				document.getElementById("content1").style.fontFamily="Rockwell";
-				document.getElementById("date1").style.fontFamily="Rockwell";
-				document.getElementById("time1").style.fontFamily="Rockwell";
-				document.getElementById("venue1").style.fontFamily="Rockwell";
-				document.getElementById("reply1").style.fontFamily="Rockwell";
+				document.getElementById("name1").style.fontFamily="Yellowtail";
+				document.getElementById("content1").style.fontFamily="Yellowtail";
+				document.getElementById("date1").style.fontFamily="Yellowtail";
+				document.getElementById("time1").style.fontFamily="Yellowtail";
+				document.getElementById("venue1").style.fontFamily="Yellowtail";
+				document.getElementById("reply1").style.fontFamily="Yellowtail";
 			}
 			else if (value==3) {
-				document.getElementById("name1").style.fontFamily="Impact";
-				document.getElementById("content1").style.fontFamily="Impact";
-				document.getElementById("date1").style.fontFamily="Impact";
-				document.getElementById("time1").style.fontFamily="Impact";
-				document.getElementById("venue1").style.fontFamily="Impact";
-				document.getElementById("reply1").style.fontFamily="Impact";
+				document.getElementById("name1").style.fontFamily="Merienda";
+				document.getElementById("content1").style.fontFamily="Merienda";
+				document.getElementById("date1").style.fontFamily="Merienda";
+				document.getElementById("time1").style.fontFamily="Merienda";
+				document.getElementById("venue1").style.fontFamily="Merienda";
+				document.getElementById("reply1").style.fontFamily="Merienda";
 			}
 
 		}
@@ -238,28 +259,28 @@ x<!DOCTYPE html>
 		function fontsize(value){
 			var canvas = document.getElementById("canvas");	
 	if (value==1) {
-				document.getElementById("name1").style.fontSize="12px";
-				document.getElementById("content1").style.fontSize="12px"; 
-				document.getElementById("date1").style.fontSize="12px";
-				document.getElementById("time1").style.fontSize="12px";
-				document.getElementById("venue1").style.fontSize="12px";
-				document.getElementById("reply1").style.fontSize="12px";
-			}
-			else if (value==2) {
 				document.getElementById("name1").style.fontSize="14px";
-				document.getElementById("content1").style.fontSize="14px";
+				document.getElementById("content1").style.fontSize="14px"; 
 				document.getElementById("date1").style.fontSize="14px";
 				document.getElementById("time1").style.fontSize="14px";
 				document.getElementById("venue1").style.fontSize="14px";
 				document.getElementById("reply1").style.fontSize="14px";
 			}
-			else if (value==3) {
+			else if (value==2) {
 				document.getElementById("name1").style.fontSize="16px";
 				document.getElementById("content1").style.fontSize="16px";
 				document.getElementById("date1").style.fontSize="16px";
 				document.getElementById("time1").style.fontSize="16px";
 				document.getElementById("venue1").style.fontSize="16px";
 				document.getElementById("reply1").style.fontSize="16px";
+			}
+			else if (value==3) {
+				document.getElementById("name1").style.fontSize="18px";
+				document.getElementById("content1").style.fontSize="18px";
+				document.getElementById("date1").style.fontSize="18px";
+				document.getElementById("time1").style.fontSize="18px";
+				document.getElementById("venue1").style.fontSize="18px";
+				document.getElementById("reply1").style.fontSize="18px";
 			}
 		}
 
@@ -279,6 +300,24 @@ x<!DOCTYPE html>
 			}
 		}
 
+		function togglePopup(){
+  	document.getElementById("popup-1").classList.toggle("active");
+	}
+
+// ---------------------------Drag & Drop------------------------------
+	function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
 	</script>
 <body onload="fillin()">
 <div class="container">
@@ -297,28 +336,38 @@ x<!DOCTYPE html>
 <div class="sidebar" style="grid-area:sidebar">
 	<div>	
 	<h3>Template</h3><br>	
-	<select onchange="layout(this.value)">
-		<option value="0">Please Select</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-	</select>
+	<div id="Templateimg">
+		<label for="one"><img src="corporate1.png" style="width:150px;height: 200px;"</label>
+		<input type="radio" name="font" onchange="layout(this.value)" id="one" value="1">
+		<label for="two"><img src="corporate2.png"style="width:150px;height: 200px;"</label>
+		<input type="radio" name="font" onchange="layout(this.value)" id="two" value="2"><br>
+	</div>
 	</div>
 	<div>
+		<h3>Stickers</h3><br>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">	
+  <img src="logoblack.png" draggable="true" ondragstart="drag(event)" id="drag1" style="border-radius: 20px 20px 20px 20px;">
+</div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="logowhite.png" draggable="true" ondragstart="drag(event)" id="drag2" style="border-radius: 20px 20px 20px 20px;">
+</div>
+</div>
+	<div>
 		<h3>Font</h3><br>	
-	<select onchange="font(this.value)">
-		<option value="0">Please Select</option>
-		<option value="1" style="font-family: Arial;">Arial</option>
-		<option value="2" style="font-family: Rockwell;">Rockwell</option>
-		<option value="3" style="font-family: impact;">Impact</option>
-	</select>
+		<label for="Dancing Script">Dancing Script</label>
+		<input type="radio" name="font" onchange="font(this.value)" id="Dancing Script" value="1" style="margin-bottom: 10px;margin-right: 5px">
+		<label for="Yellowtail">Yellowtail</label>
+		<input type="radio" name="font"  onchange="font(this.value)" id="Yellowtail" value="2" style="margin-bottom: 10px;margin-right: 5px"">
+		<label for="Merienda">Merienda</label>
+		<input type="radio" name="font" onchange="font(this.value)" id="Merienda" value="3" style="margin-bottom: 10px;"><br>
 	</div>
 	<div>
 		<h3>Font size</h3><br>	
 	<select onchange="fontsize(this.value)">
 		<option value="0">Please Select</option>
-		<option value="1">12</option>
-		<option value="2">14</option>
-		<option value="3">16</option>
+		<option value="1">14</option>
+		<option value="2">16</option>
+		<option value="3">18</option>
 	</select>
 	</div>
 	<div id="div3">
@@ -335,20 +384,34 @@ x<!DOCTYPE html>
 			<input type="text" name="" id="venue" placeholder="your venue" style="margin-top:20px;margin-bottom: 10px "><br>
 			<label for="reply">Contact Number</label>
 			<input type="num" name="" id="reply" placeholder="your contact number" style="margin-top:20px;margin-bottom: 10px "><br>
-			<button onclick="submit()">Save</button><br>
-			<button onclick="load()">Load</button><br>
-			<button onclick="clearCtn()">Clear</button>
 	</div>
 </div> 
 <div class="main" style="grid-area:main" >
-	<h1 style="margin-top: 10px">Corporate Card</h1><br>
+	<h1 style="margin-top: 50px">Corporate Card</h1><br>
 	<div id="canvas">
-		<div id="name1" contenteditable="false" style="text-align: center; margin-top: 90px;">Name</div><br>
-		<div id="content1" contenteditable="false" size="35" style="text-align: center; margin-top: 50px;">Content</div><br>
-		<div id="date1" contenteditable="false" style="text-align: center; margin-top: 70px;">Date</div><br>
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="text-align: center; margin-top: 10px;" ></div><br>
+		<div id="name1" contenteditable="false" style="text-align: center; margin-top: 10px;">Name</div><br>
+		<div id="content1" contenteditable="false" size="35" style="text-align: center; margin-top: 20px;">Content</div><br>
+		<div id="date1" contenteditable="false" style="text-align: center; margin-top: 50px;">Date</div><br>
 		<div id="time1" contenteditable="false" style="text-align: center; margin-top: 10px;">Time</div><br>
-		<div id="venue1" contenteditable="false" style="text-align: center; margin-top: 20px;">Venue</div><br>
+		<div id="venue1" contenteditable="false" style="text-align: center; margin-top: 10px;">Venue</div><br>
 		<div id="reply1" contenteditable="false" style="text-align: center; margin-top: 20px;">Contact</div>
+	</div>
+	<div style="margin-top: 30px;">
+	<button onclick="submit()">Save</button>
+	<button onclick="load()">Load</button>
+	<button onclick="clearCtn()">Clear</button>
+	<div class="popup" id="popup-1">
+  			<div class="overlay"></div>
+  				<div class="content">
+    			<div class="close-btn" onclick="togglePopup()">&times;</div>
+    			<h2>Successfully Sent</h2>
+  	</div>
+</div>
+<div id="sendrecip">
+ <input type="email" name="email" size="20" placeholder="Enter recipient email" style="border-radius: 5px 5px 5px 5px;margin-top: 10px;"><br>
+<button onclick="togglePopup()" id="sendBtn">Send to Recipient</button>
+	</div>
 	</div>
 </div>
 

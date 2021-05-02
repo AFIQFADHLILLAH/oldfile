@@ -2,9 +2,16 @@
 <html>
 <head>
 	<title></title>
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <style type="text/css">
+
+	@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
 
 	.container {
 		display: flex;
@@ -20,7 +27,7 @@
 	}
 
 	.sidebar{
-		flex:30%; height: 105vh;
+		flex:30%; height:1100px;
 		background-color: darkgreen;
 	}
 
@@ -45,7 +52,7 @@
 		height: 550px;
 		border: 2px dotted black;
 		position: relative;
-		left: 330px;top: 50px;
+		left: 330px;
 	}
 
 	#div1{
@@ -53,7 +60,7 @@
   width: 350px;
   height: 100px;
   margin-top: -5px;
-  margin-left: 50px;
+  margin-left: 0px;
   margin-bottom: 10px;
   border: 4px solid black;
   border-radius: 20px 20px 20px 20px;
@@ -68,19 +75,54 @@
 	}
 
 	#div3 {
-		width: 310px;
- 		height: 310px;
- 		margin-left: 70px;
+		width: 330px;
+ 		height: 330px;
  		border: 2px dotted black;
+ 		border-radius: 10px 10px 0px 0px;
 	}
+
+	h3 {
+		width: 60%;
+		text-align: center;
+		background: linear-gradient(#ADFF2F, #008000);
+		border: 3px solid black;
+		border-radius: 10px 10px 10px 10px;
+	}
+
+	#div3 h3 {
+		width: 100%;
+		text-align: center;
+		background: linear-gradient(#ADFF2F, #008000);
+		border: 3px solid black;
+		border-radius: 10px 10px 10px 10px;
+	}
+
+    #Templateimg {
+    	display: flex;
+    	margin-top: -10px;
+    	margin-left: 0px;
+    }
+
+    #one , #two {
+    	display: none;
+    }
 
 	button {
-		margin-top: 20px;
-		margin-left: 70px;
+		margin-top: -200px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+
 	}
 
-	label {
-		margin-left: 10px;
+	#sendrecip{
+		border:1px solid black;
+		width: 300px;
+		height: 100px;
+		margin-top: 30px;
+		margin-left: 380px;
+		border-radius: 10px 10px 10px 10px;
+
 	}
 
 	@media  screen and (max-width: 600px){
@@ -94,31 +136,43 @@
 		"main";
 	}
 
-/*	.row{
+	.row{
 		flex-direction: column;
 	}
 
 	.main {
 		width: 100%;
+		height: 800px;
 	}
 
 	.sidebar{
+		margin-top: 120px;
 		height: 1000px;
-	}	*/
-/*		.main #canvas{
+		text-align: center;
+	}	
+	.main #canvas{
 		background-size: 100% 100%;
 		width: 400px;
 		height: 550px;
 		border: 2px dotted black;
 		position: relative;
 		left: 40px;top: 50px;
-	}*/
+	}
 
+	#menuList {
+		margin-top: 50px;
+		width: 100%;
+		height: 150px;
+		background: linear-gradient(to right, #ADFF2F, #008000);
+	}
 
 	}
 
 </style>
 <script type="text/javascript">
+
+
+// ----------------------------Save user data------------------------
 	function submit(){
 			var name = document.getElementById("name");
 			var content = document.getElementById("content");
@@ -138,73 +192,8 @@
 			alert("Saved!");
 		}
 
-		function changer(value){
-			var canvas = document.getElementById("canvas");
-			if (value==1) {
-				canvas.style.backgroundImage="url(informal1.png)";
-			}
-			else if (value==2) {
-				canvas.style.backgroundImage="url(informal2.png)";
-			}
-		}
-
-		function font(value){
-			var canvas = document.getElementById("canvas");
-			if (value==1) {
-				document.getElementById("name1").style.fontFamily="Arial";
-				document.getElementById("content1").style.fontFamily="Arial";
-				document.getElementById("date1").style.fontFamily="Arial";
-				document.getElementById("time1").style.fontFamily="Arial";
-				document.getElementById("venue1").style.fontFamily="Arial";
-				document.getElementById("reply1").style.fontFamily="Arial";
-			}
-			else if (value==2) {
-				document.getElementById("name1").style.fontFamily="Rockwell";
-				document.getElementById("content1").style.fontFamily="Rockwell";
-				document.getElementById("date1").style.fontFamily="Rockwell";
-				document.getElementById("time1").style.fontFamily="Rockwell";
-				document.getElementById("venue1").style.fontFamily="Rockwell";
-				document.getElementById("reply1").style.fontFamily="Rockwell";
-			}
-			else if (value==3) {
-				document.getElementById("name1").style.fontFamily="Impact";
-				document.getElementById("content1").style.fontFamily="Impact";
-				document.getElementById("date1").style.fontFamily="Impact";
-				document.getElementById("time1").style.fontFamily="Impact";
-				document.getElementById("venue1").style.fontFamily="Impact";
-				document.getElementById("reply1").style.fontFamily="Impact";
-			}
-
-		}
-		function fontsize(value){
-			var canvas = document.getElementById("canvas");	
-	if (value==1) {
-				document.getElementById("name1").style.fontSize="12px";
-				document.getElementById("content1").style.fontSize="12px"; 
-				document.getElementById("date1").style.fontSize="12px";
-				document.getElementById("time1").style.fontSize="12px";
-				document.getElementById("venue1").style.fontSize="12px";
-				document.getElementById("reply1").style.fontSize="12px";
-			}
-			else if (value==2) {
-				document.getElementById("name1").style.fontSize="14px";
-				document.getElementById("content1").style.fontSize="14px";
-				document.getElementById("date1").style.fontSize="14px";
-				document.getElementById("time1").style.fontSize="14px";
-				document.getElementById("venue1").style.fontSize="14px";
-				document.getElementById("reply1").style.fontSize="14px";
-			}
-			else if (value==3) {
-				document.getElementById("name1").style.fontSize="16px";
-				document.getElementById("content1").style.fontSize="16px";
-				document.getElementById("date1").style.fontSize="16px";
-				document.getElementById("time1").style.fontSize="16px";
-				document.getElementById("venue1").style.fontSize="16px";
-				document.getElementById("reply1").style.fontSize="16px";
-			}
-		}
-
-		function load(){
+// ---------------------Load previous save------------------------
+	function load(){
 			var name = document.getElementById("name");
 			var content = document.getElementById("content");
 			var date = document.getElementById("date");
@@ -218,29 +207,82 @@
 			time1.innerHTML = localStorage.getItem("time");
 			venue1.innerHTML = localStorage.getItem("venue");
 			reply1.innerHTML = localStorage.getItem("reply");
+
 	}
 
-			function reveal(){
-			var name = document.getElementById("name");
-			var content = document.getElementById("content");
-			var date = document.getElementById("date");
-			var time = document.getElementById("time");
-			var venue = document.getElementById("venue");
-			var reply = document.getElementById("reply");
-
-			name.value = localStorage.getItem("name");
-			content.value = localStorage.getItem("content");
-			date.value = localStorage.getItem("date");
-			time.value = localStorage.getItem("time");
-			venue.value = localStorage.getItem("venue");
-			reply.value = localStorage.getItem("reply");
-			
+// ----------------------------Clear------------------------
+	function clearCtn(){
+		window.location.reload();
 	}
+// ----------------------------Change Template------------------------
+		function layout(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				canvas.style.backgroundImage="url(informal1.png)";
+			}
+			else if (value==2) {
+				canvas.style.backgroundImage="url(informal2.png)";
+			}
+		}
+// ----------------------Change Fontfamily------------------------
+		function font(value){
+			var canvas = document.getElementById("canvas");
+			if (value==1) {
+				document.getElementById("name1").style.fontFamily="Original Surfer";
+				document.getElementById("content1").style.fontFamily="Original Surfer";
+				document.getElementById("date1").style.fontFamily="Original Surfer";
+				document.getElementById("time1").style.fontFamily="Original Surfer";
+				document.getElementById("venue1").style.fontFamily="Original Surfer";
+				document.getElementById("reply1").style.fontFamily="Original Surfer";
+			}
+			else if (value==2) {
+				document.getElementById("name1").style.fontFamily="Freckle Face";
+				document.getElementById("content1").style.fontFamily="Freckle Face";
+				document.getElementById("date1").style.fontFamily="Freckle Face";
+				document.getElementById("time1").style.fontFamily="Freckle Face";
+				document.getElementById("venue1").style.fontFamily="Freckle Face";
+				document.getElementById("reply1").style.fontFamily="Freckle Face";
+			}
+			else if (value==3) {
+				document.getElementById("name1").style.fontFamily="Monoton";
+				document.getElementById("content1").style.fontFamily="Monoton";
+				document.getElementById("date1").style.fontFamily="Monoton";
+				document.getElementById("time1").style.fontFamily="Monoton";
+				document.getElementById("venue1").style.fontFamily="Monoton";
+				document.getElementById("reply1").style.fontFamily="Monoton";
+			}
 
-	function clear(){
-		localStorage.clear();
-	}
-			
+		}
+// -----------------------Change Font Size------------------------
+		function fontsize(value){
+			var canvas = document.getElementById("canvas");	
+	if (value==1) {
+				document.getElementById("name1").style.fontSize="14px";
+				document.getElementById("content1").style.fontSize="14px"; 
+				document.getElementById("date1").style.fontSize="14px";
+				document.getElementById("time1").style.fontSize="14px";
+				document.getElementById("venue1").style.fontSize="14px";
+				document.getElementById("reply1").style.fontSize="14px";
+			}
+			else if (value==2) {
+				document.getElementById("name1").style.fontSize="16px";
+				document.getElementById("content1").style.fontSize="16px";
+				document.getElementById("date1").style.fontSize="16px";
+				document.getElementById("time1").style.fontSize="16px";
+				document.getElementById("venue1").style.fontSize="16px";
+				document.getElementById("reply1").style.fontSize="16px";
+			}
+			else if (value==3) {
+				document.getElementById("name1").style.fontSize="18px";
+				document.getElementById("content1").style.fontSize="18px";
+				document.getElementById("date1").style.fontSize="18px";
+				document.getElementById("time1").style.fontSize="18px";
+				document.getElementById("venue1").style.fontSize="18px";
+				document.getElementById("reply1").style.fontSize="18px";
+			}
+		}
+
+// -----------------Drop down for Nav @media-----------------------		
 		var menuList = document.getElementById("menuList");
 
 		menuList.style.maxHeight = "0px";
@@ -255,12 +297,15 @@
 				menuList.style.maxHeight = "0px";
 			}
 		}
-		
+
+		function togglePopup(){
+  	document.getElementById("popup-1").classList.toggle("active");
+	}
 	</script>
 <body onload="fillin()">
 <div class="container">
-<div class="navbar" style="grid-area: nav">
-	<img src="cardforyou.png" class="logo">
+<div class="navbar">
+			<img src="cardforyou.png" class="logo">
 			<nav>
 				<ul id="menuList">
 					<li><a href="index.html">Home</a></li>
@@ -270,35 +315,37 @@
 				</ul>
 			</nav>
 			<img src="down.png" class="menu-icon" onclick="togglemenu()">
-</div>
+		</div>
 <div class="sidebar" style="grid-area:sidebar">
 	<div>	
-	<u><h2>Template</h2></u><br>	
-	<select onchange="changer(this.value)">
-		<option value="0">Please Select</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-	</select>
+	<h3>Template</h3><br>	
+	<div id="Templateimg">
+		<label for="one"><img src="informal1.png" style="width:150px;height: 200px;"</label>
+		<input type="radio" name="font" onchange="layout(this.value)" id="one" value="1">
+		<label for="two"><img src="informal2.png"style="width:150px;height: 200px;"</label>
+		<input type="radio" name="font" onchange="layout(this.value)" id="two" value="2"><br>
+	</div>
 	</div>
 	<div>
-		<u><h2>Font</h2></u><br>	
-	<select onchange="font(this.value)">
-		<option value="0">Please Select</option>
-		<option value="1" style="font-family: Arial;">Arial</option>
-		<option value="2" style="font-family: Rockwell;">Rockwell</option>
-		<option value="3" style="font-family: impact;">Impact</option>
-	</select>
+		<h3>Font</h3><br>	
+		<label for="Original Surfer">Original Surfer</label>
+		<input type="radio" name="font" onchange="font(this.value)" id="Original Surfer" value="1" style="margin-bottom: 10px;margin-right: 5px">
+		<label for="Freckle Face">Freckle Face</label>
+		<input type="radio" name="font"  onchange="font(this.value)" id="Freckle Face" value="2" style="margin-bottom: 10px;margin-right: 5px">
+		<label for="Monoton">Monoton</label>
+		<input type="radio" name="font"  onchange="font(this.value)" id="Monoton" value="3" style="margin-bottom: 10px;margin-right: 5px">
 	</div>
 	<div>
-		<u><h2>Font size</h2></u><br>	
+		<h3>Font size</h3><br>	
 	<select onchange="fontsize(this.value)">
 		<option value="0">Please Select</option>
-		<option value="1" style="font-size: 10;">12</option>
-		<option value="2" style="font-size: 12;">14</option>
-		<option value="3" style="font-size: 14;">16</option>
+		<option value="1">14</option>
+		<option value="2">16</option>
+		<option value="3">18</option>
 	</select>
 	</div>
 	<div id="div3">
+			<h3>Fill in:</h3>
 			<label for="name">Name</label>
 			<input type="text" name="" id="name" placeholder="your name" style="margin-top:20px;margin-bottom: 10px "><br>
 			<label for="content">Content</label>
@@ -311,22 +358,37 @@
 			<input type="text" name="" id="venue" placeholder="your venue" style="margin-top:20px;margin-bottom: 10px "><br>
 			<label for="reply">Contact Number</label>
 			<input type="num" name="" id="reply" placeholder="your contact number" style="margin-top:20px;margin-bottom: 10px "><br>
-			<button onclick="submit()">Save</button><br>
-			<button onclick="load()">Load</button><br>
-			<button onclick="clear()">Clear</button>
-
 	</div>
 </div> 
 <div class="main" style="grid-area:main" >
-	<h1 style="margin-top: 20px">Informal Card</h1><br>
+	<h1 style="margin-top: 50px">Informal Card</h1><br>
 	<div id="canvas">
-		<div id="name1" contenteditable="false" style="text-align: center; margin-top: 90px;">Name</div><br>
+		<div id="name1" contenteditable="false" style="text-align: center; margin-top: 80px;">Name</div><br>
 		<div id="content1" contenteditable="false" size="35" style="text-align: center; margin-top: 50px;">Content</div><br>
-		<div id="date1" contenteditable="false" style="text-align: center; margin-top: 70px;">Date</div><br>
-		<div id="time1" contenteditable="false" style="text-align: center; margin-top: 10px;">Time</div><br>
-		<div id="venue1" contenteditable="false" style="text-align: center; margin-top: 20px;">Venue</div><br>
+		<div id="date1" contenteditable="false" style="text-align: center; margin-top: 40px;">Date</div><br>
+		<div id="time1" contenteditable="false" style="text-align: center; margin-top: 20px;">Time</div><br>
+		<div id="venue1" contenteditable="false" style="text-align: center; margin-top: 10px;">Venue</div><br>
 		<div id="reply1" contenteditable="false" style="text-align: center; margin-top: 20px;">Contact</div>
 	</div>
+	<div style="margin-top: 30px;">
+	<button onclick="submit()">Save</button>
+	<button onclick="load()">Load</button>
+	<button onclick="clearCtn()">Clear</button>
+	<div class="popup" id="popup-1">
+  			<div class="overlay"></div>
+  				<div class="content">
+    			<div class="close-btn" onclick="togglePopup()">&times;</div>
+    			<h2>Successfully Sent</h2>
+  	</div>
+</div>
+<div id="sendrecip">
+ <input type="email" name="email" size="20" placeholder="Enter recipient email" style="border-radius: 5px 5px 5px 5px;margin-top: 10px;"><br>
+<button onclick="togglePopup()" id="sendBtn">Send to Recipient</button>
+	</div>
+	</div>
+</div>
+
+
 <div class="footer">
 	
 </div>

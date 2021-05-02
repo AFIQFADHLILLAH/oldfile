@@ -155,6 +155,75 @@ button:hover{
 	padding-top: 50px;
 }
 
+		.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+ 
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  width:350px;
+  height:100px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+ 
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#222;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+ 
+.popup.active .overlay {
+  display:block;
+}
+ 
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+ 
+#sendBtn {
+	width: 180px;
+	height: 50px;
+	margin-top: 30px;
+	margin-left: 150px;
+  transform:translate(-50%,-50%);
+  font-size:15px;
+  border:2px solid #222;
+  color:#FFF;
+  text-transform:uppercase;
+  background: linear-gradient(#ADFF2F, #008000);
+}
+
+#sendBtn:hover {
+	border:2px solid black;
+	font-weight: bold;
+}
+
 
 
 @media only screen and (max-width: 600px){
@@ -190,6 +259,11 @@ button:hover{
 	#menuList {
 		overflow: hidden;
 		transition: 0.5s;
+		margin-top: 30px;
+		width: 100%;
+		height: 150px;
+		background: linear-gradient(to right, #ADFF2F, #008000);
+	}
 	}
 
 	.col-2 img {
