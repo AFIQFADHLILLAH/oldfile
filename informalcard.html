@@ -326,7 +326,12 @@ body {
 				document.getElementById("reply1").style.fontSize="18px";
 			}
 		}
-
+// -----------------greeting-----------------------	
+		function greetingbox() {
+  var greet1 = document.getElementById("greeting");
+  var greet2 = greet1.selectedIndex;
+  document.getElementById("greeting1").innerHTML = greet1.options[greet2].text;
+}
 // -----------------Drop down for Nav @media-----------------------		
 		var menuList = document.getElementById("menuList");
 
@@ -381,6 +386,17 @@ body {
 		<input type="radio" name="font"  onchange="font(this.value)" id="Monoton" value="3" style="margin-bottom: 10px;margin-right: 5px">
 	</div>
 	<div>
+		<h3>Greeting</h3><br>	
+	<select id="greeting" onchange="greetingbox()" >
+		<option >---select---</option>
+		<option >Assalamualaikum</option>
+		<option >Salam sejahtera</option>
+		<option >Good day</option>
+		<option >Good morning</option>
+	</select>
+	
+	</div>
+	<div>
 		<h3>Font size</h3><br>	
 	<select onchange="fontsize(this.value)">
 		<option value="0">Please Select</option>
@@ -409,6 +425,7 @@ body {
 <div class="main" style="grid-area:main" >
 	<h1 style="margin-top: 50px">Informal Card</h1><br>
 	<div id="canvas">
+		<div id="greeting1" contenteditable="false" style="text-align: center;margin-top: 0px;">Please Select Greeting In Drop Box</div>
 		<div id="name1" contenteditable="false" style="text-align: center; margin-top: 80px;">Name</div><br>
 		<div id="content1" contenteditable="false" size="35" style="text-align: center; margin-top: 50px;">Content</div><br>
 		<div id="date1" contenteditable="false" style="text-align: center; margin-top: 40px;">Date</div><br>
