@@ -224,6 +224,10 @@ button:hover{
 	font-weight: bold;
 }
 
+.sidebar2 {
+	float: right;
+}
+
 
 
 @media only screen and (max-width: 600px){
