@@ -67,20 +67,20 @@
 </style>
 <script type="text/javascript">
 		function favourite(){
-			var name = document.getElementById("name");
-			var date = document.getElementById("date");
-			var time = document.getElementById("time");
-			var venue = document.getElementById("venue");
-			var content = document.getElementById("content");
-			var reply = document.getElementById("reply");
+			var name1 = document.getElementById("name");
+			var date1 = document.getElementById("date");
+			var time1 = document.getElementById("time");
+			var venue1 = document.getElementById("venue");
+			var content1 = document.getElementById("content");
+			var reply1 = document.getElementById("reply");
 			
 
-			name.value = localStorage.getItem("name");
-			date.value = localStorage.getItem("date");
-			time.value = localStorage.getItem("time");
-			venue.value = localStorage.getItem("venue");
-			content.value = localStorage.getItem("content");
-			reply.value = localStorage.getItem("reply");
+			name1.value = localStorage.getItem("name");
+			date1.value = localStorage.getItem("date");
+			time1.value = localStorage.getItem("time");
+			venue1.value = localStorage.getItem("venue");
+			content1.value = localStorage.getItem("content");
+			reply1.value = localStorage.getItem("reply");
 			
 		}
 	</script>
@@ -96,7 +96,6 @@
 		<input type="text" id="content" placeholder="Enter content of card" size="40" style="text-align: center; margin-top: 30px;"><br>
 		<input type="num" id="reply" placeholder="Enter contact number" maxlength="7"  style="text-align: center; margin-top: 40px;"><br>
 	</div>
-	<a href="customcard.html"><button style="text-align: center; margin-top: 60px;margin-right: 20px; width: 200px">Back to Custom Card</button></a>
 	<button onclick="favourite()"  style="text-align: center; margin-top: 60px;">Load</button>
 </div>
 		<div class="footer">
