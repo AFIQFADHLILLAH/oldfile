@@ -241,7 +241,9 @@ button:hover{
    text-align: center;
    border: 1px solid black;
 }
-
+.footer p {
+	font-size: 10px;
+}
 .main h1 {
 
 	width: 250px;
