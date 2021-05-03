@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Corporate Card</title>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -170,7 +170,9 @@
 		position: relative;
 		left: 40px;top: 5px;
 	}
-
+	.main h1 {
+		margin-left: 120px;
+	}
 	#menuList {
 		margin-top: 50px;
 		width: 100%;
@@ -364,7 +366,7 @@
 			localStorage.setItem("reply", reply.value);
 			localStorage.setItem("canvas", canvas.value);
 			alert("mark favourite");
-		}		
+		}	
 // -----------------Drop down for Nav @media-----------------------		
 		var menuList = document.getElementById("menuList");
 
@@ -418,9 +420,9 @@ function drop(ev) {
 	<div>	
 	<h3>Template</h3><br>	
 	<div id="Templateimg">
-		<label for="one"><img src="corporate1.png" style="width:150px;height: 200px;"</label>
+		<label for="one"><img src="corporate1.png" style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="one" value="1">
-		<label for="two"><img src="corporate2.png"style="width:150px;height: 200px;"</label>
+		<label for="two"><img src="corporate2.png"style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="two" value="2"><br>
 	</div>
 	</div>

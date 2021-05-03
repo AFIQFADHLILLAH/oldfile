@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Custom Card</title>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -215,6 +215,10 @@
 
 	}
 
+	.main h1 {
+		margin-left: 120px;
+	}
+
 
 </style>
 <script type="text/javascript">
@@ -227,7 +231,7 @@
 			var time = document.getElementById("time");
 			var venue = document.getElementById("venue");
 			var reply = document.getElementById("reply");
-			var canvas = document.getElementById("canvas");
+			
 
 			localStorage.setItem("name", name.value);
 			localStorage.setItem("content", content.value);
@@ -235,27 +239,26 @@
 			localStorage.setItem("time", time.value);
 			localStorage.setItem("venue", venue.value);
 			localStorage.setItem("reply", reply.value);
-			localStorage.setItem("canvas", canvas.value);
+			
 			alert("Saved!");
 		}
 
 // ----------------------------Save favourite------------------------
 	function favourite(){
-			var name = document.getElementById("name");
-			var content = document.getElementById("content");
-			var date = document.getElementById("date");
-			var time = document.getElementById("time");
-			var venue = document.getElementById("venue");
-			var reply = document.getElementById("reply");
-			var canvas = document.getElementById("canvas");
+			var name = document.getElementById("nama");
+			var content = document.getElementById("isi");
+			var date = document.getElementById("tarikh");
+			var time = document.getElementById("masa");
+			var venue = document.getElementById("tempat");
+			var reply = document.getElementById("phone");
 
-			localStorage.setItem("name", name.value);
-			localStorage.setItem("content", content.value);
-			localStorage.setItem("date", date.value);
-			localStorage.setItem("time", time.value);
-			localStorage.setItem("venue", venue.value);
-			localStorage.setItem("reply", reply.value);
-			localStorage.setItem("canvas", canvas.value);
+			localStorage.setItem("nama", name.value);
+			localStorage.setItem("isi", content.value);
+			localStorage.setItem("tarikh", date.value);
+			localStorage.setItem("masa", time.value);
+			localStorage.setItem("tempat", venue.value);
+			localStorage.setItem("phone", reply.value);
+
 			alert("Marks as favourite");
 		}
 
@@ -478,17 +481,17 @@ function drop(ev) {
 	<div>	
 	<h3>Template</h3><br>	
 	<div id="Templateimg">
-		<label for="one"><img src="1.jpg" style="width:150px;height: 200px;"</label>
+		<label for="one"><img src="1.jpg" style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="one" value="1">
-		<label for="two"><img src="2.jpg"style="width:150px;height: 200px;"</label>
+		<label for="two"><img src="2.jpg"style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="two" value="2"><br>
-		<label for="three"><img src="3.jpg"style="width:150px;height: 200px;"</label>
+		<label for="three"><img src="3.jpg"style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="three" value="3">
-		<label for="four"><img src="4.jpg"style="width:150px;height: 200px;"</label>
+		<label for="four"><img src="4.jpg"style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="four" value="4"><br>
-		<label for="five"><img src="5.jpg"style="width:150px;height: 200px;"</label>
+		<label for="five"><img src="5.jpg"style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="five" value="5">
-		<label for="six"><img src="6.jpg"style="width:150px;height: 200px;"</label>
+		<label for="six"><img src="6.jpg"style="width:150px;height: 200px;"></label>
 		<input type="radio" name="font" onchange="layout(this.value)" id="six" value="6"><br>
 	</div>
 </div>
@@ -566,7 +569,7 @@ function drop(ev) {
 		<div id="reply1" contenteditable="false" style="text-align: center; margin-top: 10px;">Contact</div>
 	</div>
 	<div style="margin-top: 30px;">
-	<button onclick="load()">Load</button>
+	<button onclick="load()">Load To Preview</button>
 	<button onclick="clearCtn()">Clear</button><br>
 	<button style="margin-top: 10px;width: 300px" onclick="favourite()">Marks as favourite</button>
 	<div class="popup" id="popup-1">

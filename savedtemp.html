@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Favourite Card</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <style type="text/css">
@@ -67,20 +67,20 @@
 </style>
 <script type="text/javascript">
 		function favourite(){
-			var name1 = document.getElementById("name");
-			var date1 = document.getElementById("date");
-			var time1 = document.getElementById("time");
-			var venue1 = document.getElementById("venue");
-			var content1 = document.getElementById("content");
-			var reply1 = document.getElementById("reply");
+			var nama = document.getElementById("name");
+			var tarikh = document.getElementById("date");
+			var masa = document.getElementById("time");
+			var tempat = document.getElementById("venue");
+			var isi= document.getElementById("content");
+			var phone = document.getElementById("reply");
 			
 
-			name1.value = localStorage.getItem("name");
-			date1.value = localStorage.getItem("date");
-			time1.value = localStorage.getItem("time");
-			venue1.value = localStorage.getItem("venue");
-			content1.value = localStorage.getItem("content");
-			reply1.value = localStorage.getItem("reply");
+			nama.value = localStorage.getItem("name");
+			tarikh.value = localStorage.getItem("date");
+			masa.value = localStorage.getItem("time");
+			tempat.value = localStorage.getItem("venue");
+			isi.value = localStorage.getItem("content");
+			phone.value = localStorage.getItem("reply");
 			
 		}
 	</script>

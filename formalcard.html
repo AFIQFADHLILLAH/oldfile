@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Formal Card</title>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -223,6 +223,10 @@
 
 	}
 
+	.main h1 {
+		margin-left: 120px;
+	}
+
 </style>
 <script type="text/javascript">
 
@@ -246,6 +250,26 @@
 			localStorage.setItem("canvas", canvas.value);
 			alert("Saved!");
 		}
+
+// -----------------mark as favourtire-----------------------
+	function favourite(){
+			var name = document.getElementById("name");
+			var content = document.getElementById("content");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var venue = document.getElementById("venue");
+			var reply = document.getElementById("reply");
+			var canvas = document.getElementById("canvas");
+
+			localStorage.setItem("name", name.value);
+			localStorage.setItem("content", content.value);
+			localStorage.setItem("date", date.value);
+			localStorage.setItem("time", time.value);
+			localStorage.setItem("venue", venue.value);
+			localStorage.setItem("reply", reply.value);
+			localStorage.setItem("canvas", canvas.value);
+			alert("mark favourite");
+		}	
 
 // ---------------------Load previous save------------------------
 	function load(){
@@ -342,25 +366,7 @@
   var greet2 = greet1.selectedIndex;
   document.getElementById("greeting1").innerHTML = greet1.options[greet2].text;
 }
-// -----------------mark as favourtire-----------------------
-	function favourite(){
-			var name = document.getElementById("name");
-			var content = document.getElementById("content");
-			var date = document.getElementById("date");
-			var time = document.getElementById("time");
-			var venue = document.getElementById("venue");
-			var reply = document.getElementById("reply");
-			var canvas = document.getElementById("canvas");
 
-			localStorage.setItem("name", name.value);
-			localStorage.setItem("content", content.value);
-			localStorage.setItem("date", date.value);
-			localStorage.setItem("time", time.value);
-			localStorage.setItem("venue", venue.value);
-			localStorage.setItem("reply", reply.value);
-			localStorage.setItem("canvas", canvas.value);
-			alert("mark favourite");
-		}	
 // -----------------Drop down for Nav @media-----------------------		
 		var menuList = document.getElementById("menuList");
 
@@ -464,7 +470,7 @@
 	</div>
 	<div style="margin-top: 30px;">
 	<button onclick="load()">Load To Preview</button>
-	<button onclick="clearCtn()">Clear</button>
+	<button onclick="clearCtn()">Clear</button><br>
 	<button style="margin-top: 10px;width: 300px" onclick="favourite()">Marks as favourite</button>			    
 	<div class="popup" id="popup-1">
   			<div class="overlay"></div>

@@ -237,7 +237,7 @@ button:hover{
    width: 100%;
    background: darkgreen;
    font-weight: bold;
-   color: white;
+   color: black;
    text-align: center;
    border: 1px solid black;
 }
@@ -254,16 +254,6 @@ button:hover{
 	font-family: 'Comic Sans MS';
 }
 
-.main h1:hover {
-
-	
-	border:2px solid white;
-	border-radius: 10px 10px 10px 10px;
-	margin-left: 410px;
-	background-color: darkgreen;
-	color: white;
-	font-family: 'Comic Sans MS';
-}
 
 
 
